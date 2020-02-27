@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Login Error</h1>
+        <p>Login failed. Please try again.</p>
+        <p>
+            <form method="post" action="">
+                Login Account: <input type="text"　name="account" required/><br>
+                Login Password: <input type="password" name="paasword" required/><br>
+                <input type="submit" value="Login"/>
+            </form>
+        </p>
+        or <a href="{{url_for('apply_get')}}">sign up</a>
+    </body>
+</html>

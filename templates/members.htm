@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Members</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Login Account</th><th>Login Password</th><th>Display Name</th>
+                </tr>
+            </thead>
+            {% for user in users %}
+            <tr>
+                <td>{{user['loginuser']}}</td>
+                <td>{{user['password']}}</td>
+                <td>{{user['displayname']}}</td>
+            </tr>
+            {% endfor %}
+        </table> 
+    </body>
+</html>

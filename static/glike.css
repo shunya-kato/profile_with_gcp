@@ -1,0 +1,265 @@
+.index {
+    padding:10px;
+    box-sizing: border-box;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: "Exo", sans-serif;
+    color: #fff;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+
+@keyframes gradientBG{
+  0%{
+    background-position: 0% 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }  
+}
+
+/*header{
+    padding:10px;
+    background: #99ccff;
+}*/
+  
+  #nav-drawer {
+    position: relative;
+  }
+  
+  /*チェックボックス等は非表示に*/
+  .nav-unshown {
+    display:none;
+  }
+  
+  /*アイコンのスペース*/
+  #nav-open {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+    vertical-align: middle;
+  }
+  
+  /*ハンバーガーアイコンをCSSだけで表現*/
+  #nav-open span, #nav-open span:before, #nav-open span:after {
+    position: absolute;
+    height: 3px;/*線の太さ*/
+    width: 25px;/*長さ*/
+    border-radius: 3px;
+    background: #555;
+    display: block;
+    content: '';
+    cursor: pointer;
+  }
+  #nav-open span:before {
+    bottom: -8px;
+  }
+  #nav-open span:after {
+    bottom: -16px;
+  }
+  
+  /*閉じる用の薄黒カバー*/
+  #nav-close {
+    display: none;/*はじめは隠しておく*/
+    position: fixed;
+    z-index: 99;
+    top: 0;/*全体に広がるように*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+  }
+  
+  /*中身*/
+  #nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;/*最前面に*/
+    width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+    max-width: 200px;/*最大幅（調整してください）*/
+    height: 100%;
+    background: #cfcfcf;/*背景色*/
+    transition: .3s ease-in-out;/*滑らかに表示*/
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);/*左に隠しておく*/
+    text-align: center;
+    color:black;
+  }
+
+
+  
+  /*チェックが入ったらもろもろ表示*/
+  #nav-input:checked ~ #nav-close {
+    display: block;/*カバーを表示*/
+    opacity: .5;
+  }
+  
+  #nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);/*中身を表示（右へスライド）*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  }
+
+
+    
+     a span {
+        position: absolute;
+        top:0;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        margin-left: -12px;
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-animation: sdb 2s infinite;
+        animation: sdb 2s infinite;
+        opacity: 0;
+        box-sizing: border-box;
+      }
+     a span:nth-of-type(1) {
+        -webkit-animation-delay: 0s;
+        animation-delay: 0s;
+      }
+      a span:nth-of-type(2) {
+        top: 16px;
+        -webkit-animation-delay: .15s;
+        animation-delay: .15s;
+      }
+      a span:nth-of-type(3) {
+        top: 32px;
+        -webkit-animation-delay: .3s;
+        animation-delay: .3s;
+      }
+      @-webkit-keyframes sdb {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      @keyframes sdb {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+.content{
+    color:red;
+    background: #cfcfcf;
+}
+
+.grid-containr{
+    display:grid;
+    grid-template-rows: 200px 200px;
+    grid-template-columns: (4,200px);
+}
+.grid-itemA{
+    font-size: 150%;
+    color:#ddd;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    /*background: #ff9999;*/
+    /*border-top: solid 3px black;
+    border-right: solid 3px black;
+    border-left: solid 3px black;
+    border-bottom: solid 3px black;*/
+}
+.grid-itemA h2{
+    text-align: center;
+}
+.grid-itemB{
+    font-size: 150%;
+    color:#ddd;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 5;
+    /*background: #ffcc99;*/
+}
+.grid-itemB h2{
+    text-align: center;
+}
+
+.hobby h1{
+    text-align: center;
+    font-size: 300%;
+}
+
+.content p{
+    text-align: center;
+}
+
+.major h1{
+    font-size:300%;
+}
+.major p{
+    font-size:150%;
+}
+
+.intro{
+    text-align: center;
+    font-size: 150%;
+    color: #ddd;
+    /*background:#9999ff;*/
+}
+.intro h2{
+    text-align: center;
+}
+
+.scroll{
+  position: absolute;
+  top:0;
+  left: 50%;
+  top:66px;
+  width: 100px;
+  margin-left: -50px;
+  text-align: center;
+  color:#fff;
+}
+
+a.selected{
+    color:black;
+    text-decoration:none;
+}
+
+.login{
+  text-align:right;
+  color:black;
+}
+
+.login h4{
+  display:inline-block;
+}
+
+.sites{
+  color:#ddd;
+}
+
+.topics{
+  color:#ddd;
+  font-family:"Exo", sans-serif;
+}

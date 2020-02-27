@@ -1,0 +1,58 @@
+{%extends"base.htm"%}
+{%block bodycontent%}
+<section id="banner" class="major">
+        <div>
+            <header>
+                <h1>ようこそ、加藤駿弥の自己紹介ページへ</h1>
+                <p>これはプログラミング(クラウド計算)の授業の課題として作った自己紹介Webページです。</p>
+            </header>
+            <div class="content">
+                    
+                <ul class="actions">
+                    <a href="#"><span></span><span></span><span></span></a>
+                    <span class="scroll">スクロール</span>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="intro">
+        <div>
+            <h2>~自己紹介~</h2>
+            工学部電気電子工学科2回生の加藤駿弥です。
+            愛知県出身です。2回生から情報系の勉強に興味が出てきました。<br>
+            音楽や運動が好きです。甘いもの大好きです。
+        </div>
+    </section>
+    <br>
+    <section>
+        <div class="grid-containr">
+            <div class="grid-itemA">
+                <!--<a href="{{ url_for('main',name='sites')}}">-->
+                    <h2>趣味</h2>
+                    <br>
+                    <h4>
+                        <ul>
+                            <li>テニス</li>
+                            <br>
+                            
+                            <li>プログラミング</li>
+                        </ul>
+                    </h4>
+                </a>
+            </div>
+            <div class="grid-itemB">
+                <!--<a href="{{ url_for('main',name='topics')}}">-->
+                    <h2>興味</h2>
+                    <br>
+                    <h4>
+                        <ul>
+                            <li>機械学習</li><br>
+                            <li>通信</li>
+                        </ul>
+                    </h4>
+                </a>
+            </div>
+        </div>
+    </section>
+{%endblock%}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        {% if user %}
+        {% for user in user %}
+        <p>
+            already logged in as {{user['loginuser']}}.
+        </p>
+        {% endfor %}
+        {% else %}
+        <h1>Login</h1>
+        <p>
+            <form method="POST" action="">
+                Login Account: <input type="text" name="account" required/><br>
+                Login Password: <input type="password" name="password" required/><br>
+                <input type="submit" value="Login"/>
+            </form>
+        </p>
+        or <a href="{{url_for('apply_get')}}">sign up</a>.
+        {% endif %}
+    </body>
+</html>

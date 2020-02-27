@@ -1,0 +1,40 @@
+{%extends"base.htm"%}
+{%block bodycontent%}
+<section id="banner" class="hobby">
+        <div>
+            <header>
+                <h1 class='sites'>チャット</h1>
+            </header>
+            <div class="content">
+                
+                <ul class="actions">
+                    <a href="#"><span></span><span></span><span></span></a>
+                    <span class="scroll">スクロール</span>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <p>
+            <form method="POST" action="">
+                Contents: <input type="text" name="chat" required/>
+                <input type="submit" value="add"/>
+            </form>
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th><th>Timestamp</th><th>Contents</th>
+                </tr>
+            </thead>
+            {% for chat in chats %}
+            <tr>
+                <td>{{chat['displayname']}}</td>
+                <td>{{chat['timestamp']}}</td>
+                <td>{{chat['contents']}}</td>
+            </tr>
+            {% endfor %}
+        </table> 
+    </section>
+{%endblock%}

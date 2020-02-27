@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <title>加藤駿弥の自己紹介Webページ</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='glike.css')}}"/>
+    </head>
+    <body class="index">
+        <div id="wrapper">
+
+            <header>
+                <div id="nav-drawer">
+                    <input id="nav-input" type="checkbox" class="nav-unshown">
+                    <label id="nav-open" for="nav-input"><span></span></label>
+                    <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+                        <div id="nav-content", class="toolbar">
+                            <h1>メニュー</h1><br>
+                            <a {% if path != 'index'%}href="{{ url_for('main',name='index')}}"{%endif%} {% if path == 'index' %}
+                            class="selected"
+                          {% endif %}><h2>ホーム</h2></a><br>
+                            <a {% if path != 'sites'%}href="{{ url_for('main',name='sites')}}"{%endif%}{% if path == 'sites' %}
+                            class="selected"
+                          {% endif %}><h2>趣味</h2></a><br>
+                            <a {% if path != 'topics'%}href="{{ url_for('main',name='topics')}}"{%endif%}{% if path == 'topics' %}
+                            class="selected"
+                          {% endif %}><h2>興味</h2></a><br>
+                          <a {% if path != 'chat'%}href="{{ url_for('main',name='chat')}}"{%endif%} {% if path == 'index' %}
+                            class="selected"
+                          {% endif %}><h2>チャット</h2></a><br>
+                          <a {% if path != 'evaluate'%}href="{{ url_for('main',name='evaluate')}}"{%endif%} {% if path == 'index' %}
+                            class="selected"
+                          {% endif %}><h2>工夫した点</h2></a>
+                        </div>
+                </div>
+                <div class="login">
+                    {%if loginuser %}
+                    <a href="{{url_for('logout')}}"><h4>ログアウト</h4></a>
+                    {%else%}
+                    <a href="{{url_for('root')}}"><h4>ログイン</h4></a>
+                    {%endif%}
+                </div>
+            </header>
+            <div id="bodycontent">
+                {% block bodycontent %}
+                Replace this
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>

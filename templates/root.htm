@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        {% if user %}
+        {% for user in user %}
+        <p>
+            <h1>Welcome !!</h1>
+            Login Account: {{user['loginuser']}}<br>
+            Display Name: {{user['displayname']}}<br>
+            Return <a href = "{{ url_for('main',name='index')}}">home</a>.
+        </p>
+        {% endfor %}
+        {% else %}
+        <p>
+            You have not logged in, or your login session is not valid.
+        </p>
+        <p>
+            Please <a href="{{url_for('login_get')}}">login</a>,<br>
+            or <a href="{{url_for('apply_get')}}">sign up</a>
+        </p>
+        {% endif %}
+    </body>
+</html>
